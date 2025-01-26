@@ -11,8 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/icmx/calmer-json.git"
   },
-  "private": true,
+  "files": [
+    "dist"
+  ],
   "main": "dist/main.js",
+  "types": "dist/main.d.ts",
   "scripts": {
     "test": "jest",
     "build": "tsup"
