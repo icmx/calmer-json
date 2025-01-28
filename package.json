@@ -1,6 +1,15 @@
 {
   "name": "calmer-json",
   "version": "0.0.1",
+  "description": "Same as stadard JSON stringify-parse, but never throws on circular references and BigInt values",
+  "keywords": [
+    "json",
+    "stringify",
+    "parse",
+    "circular",
+    "bigint",
+    "utility"
+  ],
   "author": "icmx",
   "license": "MIT",
   "homepage": "https://github.com/icmx/calmer-json",
