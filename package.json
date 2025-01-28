@@ -1,7 +1,7 @@
 {
   "name": "calmer-json",
   "version": "0.0.1",
-  "description": "Same as stadard JSON stringify-parse, but never throws on circular references and BigInt values",
+  "description": "Same as standard JSON stringify-parse, but never throws on circular references and BigInt values",
   "keywords": [
     "json",
     "stringify",
