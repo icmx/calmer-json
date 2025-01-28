@@ -1,6 +1,2 @@
-/** Hello world */
-export default (): number => {
-  console.log('hello world');
-
-  return 0;
-};
+export * from './core/toJson';
+export * from './core/fromJson';
