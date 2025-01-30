@@ -3,12 +3,27 @@ import { ErrorHandler } from '../types/ErrorHandler';
 import { createDefaultErrorHandler } from '../utils/createDefaultErrorHandler';
 import { createDefaultReplacer } from '../utils/createDefaultReplacer';
 
+/** Options for `toJson` function. Compatible with standard JSON.stringify */
 export type ToJsonOptions = {
+  /** Function to transform value entries (if any) */
   replacer?: EntryMapper;
+
+  /** String to use to ident or number of spaces for identation */
   space?: string | number;
+
+  /** Callback to handle possible errors and provide a fallback value */
   onError?: ErrorHandler<string>;
 };
 
+/**
+ * Calmer wrapper for standard JSON.stringify function.
+ *
+ * Unlike JSON.stringify, `toJson` never throws on circular references
+ * or BigInt values. It just ignores them as non-serializable values.
+ *
+ * @param value Value to stringify to JSON text
+ * @param options Stringification options
+ */
 export const toJson = <T = unknown>(
   value: T,
   options: ToJsonOptions = {}

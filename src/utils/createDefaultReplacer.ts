@@ -1,3 +1,8 @@
+/**
+ * Creates a function to replace entries while using `toJson`. By
+ * default will ignore entries with BigInt values or with circular
+ * references.
+ */
 export const createDefaultReplacer = () => {
   const seen = new WeakSet();
 
@@ -8,7 +13,7 @@ export const createDefaultReplacer = () => {
 
     if (typeof value === 'object' && value !== null) {
       if (seen.has(value)) {
-        return '[[Circular]]';
+        return undefined;
       }
 
       seen.add(value);
