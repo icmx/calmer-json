@@ -1,6 +1,6 @@
 {
   "name": "calmer-json",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Like JSON stringify/parse, but never throws on circular references or BigInt values",
   "keywords": [
     "json",
