@@ -1,10 +1,12 @@
 # calmer-json
 
-> **WIP.** Currently in progress, please do not use this.
-
-Same as standard JSON stringify-parse, but never throws on circular references and BigInt values.
+Like JSON stringify/parse, but never throws on circular references and BigInt values.
 
 ## Usage
+
+```sh
+npm install calmer-json
+```
 
 ### `toJson` — stringify
 
@@ -12,12 +14,12 @@ Same as standard JSON stringify-parse, but never throws on circular references a
 const text = toJson(value, options?)
 ```
 
-  - `value` Value to stringify to JSON text
+  - `value` Value to stringify to a JSON text
   - `options.replacer?` Function to transform value entries (if any)
   - `options.space?` String to use to ident or number of spaces for identation
   - `options.onError?` Callback to handle possible errors and provide a fallback value
 
-Unlike JSON.stringify, `toJson` never throws on circular references or BigInt values. It just ignores them as non-serializable values:
+Unlike JSON.stringify, `toJson` never throws on circular references or BigInt values. It just ignores them as non-serializable:
 
 ```ts
 const example = {
@@ -28,7 +30,7 @@ const example = {
 
 example.circular = example;
 
-toJson(example); // -> "{foo:'bar'}"
+toJson(example); // -> '{"foo":"bar"}'
 ```
 
 ### `fromJson` — parse
@@ -37,6 +39,6 @@ toJson(example); // -> "{foo:'bar'}"
 const value = fromJson(text, options?)
 ```
 
-  - `text` string to parse from JSON text to a value
+  - `text` String to parse from JSON text to a value
   - `options.reviver?` Function to transform value entries (if any)
   - `options.onError?` Callback to handle possible errors and provide a fallback value

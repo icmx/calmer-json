@@ -12,7 +12,7 @@ export type FromJsonOptions<T = unknown> = {
 };
 
 /**
- * Calmer wrapper of standard JSON.parse
+ * Calmer wrapper for standard JSON.parse function
  *
  * @param text String to parse from JSON text to a value
  * @param options Parsing options

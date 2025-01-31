@@ -21,7 +21,7 @@ export type ToJsonOptions = {
  * Unlike JSON.stringify, `toJson` never throws on circular references
  * or BigInt values. It just ignores them as non-serializable values.
  *
- * @param value Value to stringify to JSON text
+ * @param value Value to stringify to a JSON text
  * @param options Stringification options
  */
 export const toJson = <T = unknown>(
