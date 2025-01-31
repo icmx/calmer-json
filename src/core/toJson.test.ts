@@ -1,3 +1,4 @@
+import { createBasicJsonSample } from '../../test/utils/createBasicJsonSample';
 import { toJson } from './toJson';
 
 describe('toJson function', () => {
@@ -56,15 +57,7 @@ describe('toJson function', () => {
   });
 
   it('Should do the same as JSON.stringify in basic serialization', () => {
-    const sample = {
-      undefined: undefined,
-      null: null,
-      booleans: [false, true],
-      numbers: [0, 1, 1000, 99_999_999],
-      strings: ['hello', 'world'],
-      array: [[[[[0]]]]],
-      object: { a: { b: { c: 0 } } },
-    };
+    const sample = createBasicJsonSample();
 
     const source = toJson(sample);
     const target = JSON.stringify(sample);
@@ -73,15 +66,7 @@ describe('toJson function', () => {
   });
 
   it('Should apply replacer option exactly as JSON.stringify', () => {
-    const sample = {
-      undefined: undefined,
-      null: null,
-      booleans: [false, true],
-      numbers: [0, 1, 1000, 99_999_999],
-      strings: ['hello', 'world'],
-      array: [[[[[0]]]]],
-      object: { a: { b: { c: 0 } } },
-    };
+    const sample = createBasicJsonSample();
 
     const replacer = (key: string, value: unknown) =>
       typeof value === 'object' ? value : `${key}:${value}`;
@@ -93,15 +78,7 @@ describe('toJson function', () => {
   });
 
   it('Should apply space option exactly as JSON.stringify', () => {
-    const sample = {
-      undefined: undefined,
-      null: null,
-      booleans: [false, true],
-      numbers: [0, 1, 1000, 99_999_999],
-      strings: ['hello', 'world'],
-      array: [[[[[0]]]]],
-      object: { a: { b: { c: 0 } } },
-    };
+    const sample = createBasicJsonSample();
 
     const stringSpace = '\t';
     const stringSource = toJson(sample, { space: stringSpace });
