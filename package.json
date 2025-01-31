@@ -27,7 +27,8 @@
   "types": "dist/main.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsup"
+    "build": "tsup",
+    "release": "np"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
