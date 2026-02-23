@@ -23,11 +23,11 @@
   "files": [
     "dist"
   ],
-  "main": "dist/main.js",
-  "types": "dist/main.d.ts",
+  "main": "dist/main.mjs",
+  "types": "dist/main.d.mts",
   "scripts": {
     "test": "jest",
-    "build": "tsup",
+    "build": "tsdown",
     "release": "np"
   },
   "devDependencies": {
@@ -35,7 +35,7 @@
     "jest": "^30.2.0",
     "np": "^11.0.2",
     "ts-jest": "^29.4.6",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.20.3",
     "typescript": "^5.9.3"
   }
 }
