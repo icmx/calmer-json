@@ -16,7 +16,7 @@ const text = toJson(value, options?)
 
   - `value` Value to stringify to a JSON text
   - `options.replacer?` Function to transform value entries (if any)
-  - `options.space?` String to use to ident or number of spaces for identation
+  - `options.space?` String to use to indent or number of spaces for indentation
   - `options.onError?` Callback to handle possible errors and provide a fallback value
 
 Unlike JSON.stringify, `toJson` never throws on circular references or BigInt values. It just ignores them as non-serializable:

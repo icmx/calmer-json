@@ -17,10 +17,10 @@ describe('toJson function', () => {
       },
     };
 
-    // @ts-ignore
+    // @ts-expect-error
     sample.nested.a.b.c.circular = sample.ref;
 
-    // @ts-ignore
+    // @ts-expect-error
     sample.nested.a.b.c.array.push(sample.ref);
 
     const text = toJson(sample);
@@ -45,7 +45,7 @@ describe('toJson function', () => {
       },
     };
 
-    // @ts-ignore
+    // @ts-expect-error
     sample.nested.a.b.c.array.push(BigInt('3'));
 
     const text = toJson(sample);
@@ -100,7 +100,7 @@ describe('toJson function', () => {
       $value: value,
     });
 
-    expect(() => toJson(sample, { replacer }));
+    expect(() => toJson(sample, { replacer })).toThrow();
   });
 
   it('Should return a fallback value if onError returns it', () => {

@@ -8,7 +8,7 @@ export type ToJsonOptions = {
   /** Function to transform value entries (if any) */
   replacer?: EntryMapper;
 
-  /** String to use to ident or number of spaces for identation */
+  /** String to use to indent or number of spaces for indentation */
   space?: string | number;
 
   /** Callback to handle possible errors and provide a fallback value */

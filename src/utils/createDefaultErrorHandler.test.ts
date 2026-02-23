@@ -1,7 +1,7 @@
 import { createDefaultErrorHandler } from './createDefaultErrorHandler';
 
 describe('createDefaultErrorHandler utility function', () => {
-  it('Should throw exactly the same error occured', () => {
+  it('Should throw exactly the same error occurred', () => {
     const first = new Error('First error');
     const second = new Error('Second error');
 
