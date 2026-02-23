@@ -20,11 +20,25 @@
     "type": "git",
     "url": "git+https://github.com/icmx/calmer-json.git"
   },
+  "type": "module",
   "files": [
     "dist"
   ],
-  "main": "dist/main.mjs",
-  "types": "dist/main.d.mts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/main.d.mts",
+        "default": "./dist/main.mjs"
+      },
+      "require": {
+        "types": "./dist/main.d.cts",
+        "default": "./dist/main.cjs"
+      }
+    }
+  },
+  "main": "./dist/main.cjs",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.mts",
   "scripts": {
     "test": "jest",
     "build": "tsdown",
