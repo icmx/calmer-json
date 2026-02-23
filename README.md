@@ -1,6 +1,6 @@
 # calmer-json
 
-Like JSON stringify/parse, but never throws on circular references and BigInt values.
+Safe way to build or parse JSON. Never throws on circular refs and BigInts.
 
 ## Usage
 
