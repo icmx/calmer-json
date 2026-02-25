@@ -1,9 +1,11 @@
+import { EntryMapper } from '../types/EntryMapper';
+
 /**
  * Creates a function to replace entries while using `toJson`. By
  * default will ignore entries with BigInt values or with circular
  * references.
  */
-export const createDefaultReplacer = () => {
+export const createDefaultReplacer = (): EntryMapper => {
   const seen = new WeakSet();
 
   return (key: string, value: unknown) => {

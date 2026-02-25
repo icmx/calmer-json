@@ -21,7 +21,7 @@ export const fromJson = <T = unknown>(
   text: string,
   options: FromJsonOptions<T> = {}
 ): T => {
-  const reviver = options.reviver || undefined;
+  const reviver = options.reviver;
   const onError = options.onError || createDefaultErrorHandler();
 
   try {

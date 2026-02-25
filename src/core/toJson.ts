@@ -29,7 +29,7 @@ export const toJson = <T = unknown>(
   options: ToJsonOptions = {}
 ): string => {
   const replacer = options.replacer || createDefaultReplacer();
-  const space = options.space || undefined;
+  const space = options.space ?? undefined;
   const onError = options.onError || createDefaultErrorHandler();
 
   try {
